@@ -116,6 +116,44 @@ function abtheme_widgets_init() {
 }
 add_action( 'widgets_init', 'abtheme_widgets_init' );
 
+function ab_init() {
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );	 
+}
+
+add_action( ' after_setup_theme ', ' ab_init ' );
+ 
+/**
+ * projects custom post type.
+ */
+ 
+function project_custom_post_init() {
+	$labels = array( 
+				'name' => 'Projects',
+				'singular_name' => 'Project',
+				'add_new_item' => 'Add New Project',
+				'edit_item' => 'Edit Project'
+			);
+	$args = array(
+			'labels' => $labels,
+			'menu_icon' => 'dashicons-clipboard',
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array('title','thumbnail','editor','excerpt','comments'),
+		);
+	register_post_type( 'project', $args );
+	
+}
+add_action( 'init','project_custom_post_init' );
+
+
 /**
  * Enqueue scripts and styles.
  */
