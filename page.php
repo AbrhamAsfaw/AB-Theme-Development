@@ -13,28 +13,27 @@
  */
 
 get_header();
-?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+while (have_posts()) {
+  the_post();
+   ?>    
+    <h2 class="page-heading"><?php the_title(); ?></h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <?php if(has_post_thumbnail()) {  ?>
+          <div class="card-image">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
+          </div>
+          <?php } ?>
+          <div class="card-description">
+            <?php the_content(); ?>
+          </div>
+        </div>
+      </section>
+      <?php } ?>
+      <br>
+      <aside id="sidebar">
+        <?php dynamic_sidebar('sidebar-1'); ?>
+      </aside>
+    </div>
+<?php get_footer(); ?>    
