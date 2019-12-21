@@ -6,7 +6,7 @@
   
     <main>
         <a href="<?php echo site_url('/blog'); ?>">
-            <h2 class="section-heading">All Blogs</h2>
+            <h2 class="section-heading">Blogs</h2>
         </a>
 
         <section>
@@ -49,7 +49,7 @@
         ?>
     </section>
     
-        	<h2 class="section-heading">All Projects</h2>
+        	<h2 class="section-heading">Projects</h2>
 
         <section>
             <?php
