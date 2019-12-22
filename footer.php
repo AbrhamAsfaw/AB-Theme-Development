@@ -11,26 +11,57 @@
 
 ?>
 
-	</div><!-- #content -->
+<footer>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'abtheme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'abtheme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'abtheme' ), 'abtheme', '<a href="http://AB.com">ABRHAM ASFAW</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<div class="container">
+	<div class="row">
+		<div class="col">
+		<?php
+		if(is_active_sidebar('footer-1')){
+		dynamic_sidebar('footer-1');
+		}
+		?>
+		</div>
+	<div class="col">
+		<?php
+		if(is_active_sidebar('footer-2')){
+		dynamic_sidebar('footer-2');
+		}
+		?>
+	</div>
+	<div class="col">
+		<?php
+		if(is_active_sidebar('footer-3')){
+		dynamic_sidebar('footer-3');
+		}
+		?>
+	</div>
+	<div class="col">
+		<?php
+		if(is_active_sidebar('footer-4')){
+		dynamic_sidebar('footer-4');
+		}
+		?>
+	</div>
+	</div>  
+</div>
+
+	<nav>
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'footer',
+	
+		) );
+		?>
+	</nav>
+		 
+
+</footer>
+
+</main>
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
