@@ -1,3 +1,4 @@
+
 <?php
 /**
  * ABTheme functions and definitions
@@ -6,6 +7,7 @@
  *
  * @package ABTheme
  */
+
 
 if ( ! function_exists( 'abtheme_setup' ) ) :
 	/**
@@ -43,8 +45,9 @@ if ( ! function_exists( 'abtheme_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'abtheme' ),
+		register_nav_menus( array( 
+			'primary' => __('Main Menu'),
+			'footer' => __('Footer Menu'),
 		) );
 
 		/*
@@ -74,8 +77,8 @@ if ( ! function_exists( 'abtheme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 512,
+			'width'       => 512,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -113,6 +116,45 @@ function abtheme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name' => 'Footer Area 1',
+		'id' => 'footer-1',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Footer Area 2',
+		'id' => 'footer-2',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Footer Area 3',
+		'id' => 'footer-3',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Footer Area 4',
+		'id' => 'footer-4',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		) );
 }
 add_action( 'widgets_init', 'abtheme_widgets_init' );
 
@@ -136,10 +178,10 @@ add_action( ' after_setup_theme ', ' ab_init ' );
  
 function project_custom_post_init() {
 	$labels = array( 
-				'name' => 'Projects',
-				'singular_name' => 'Project',
-				'add_new_item' => 'Add New Project',
-				'edit_item' => 'Edit Project'
+				'name' => 'Tutorials',
+				'singular_name' => 'Tutorial',
+				'add_new_item' => 'Add New Tutorial',
+				'edit_item' => 'Edit Tutorial'
 			);
 	$args = array(
 			'labels' => $labels,
@@ -148,22 +190,21 @@ function project_custom_post_init() {
 			'has_archive' => true,
 			'supports' => array('title','thumbnail','editor','excerpt','comments'),
 		);
-	register_post_type( 'project', $args );
+	register_post_type( 'tutorial', $args );
 	
 }
 add_action( 'init','project_custom_post_init' );
-
 
 /**
  * Enqueue scripts and styles.
  */
 function abtheme_scripts() {
-	wp_enqueue_style( 'abtheme-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
-	wp_enqueue_script( 'bootstrap-js' , get_template_directory_uri() . '/bootstrap/js/bootstrap.bundle.min.js', array('jquery') );
-	wp_enqueue_script( 'abtheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'abtheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap-grid.min.css' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js' );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	//wp_enqueue_script( 'abtheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -171,36 +212,20 @@ function abtheme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'abtheme_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
+// Search Filters
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+function search_filter($query) {
+	if ($query->is_search()) {
+		$query->set('post_type',array('post', 'tutorial'));
+	}
 }
 
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
+add_filter('pre_get_posts', 'search_filter');
+
+//Register navwalker
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
+add_action( 'after_setup_theme', 'register_navwalker' );
