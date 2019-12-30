@@ -7,7 +7,7 @@
  * @package ABTheme
  */
 
-<?php get_header(); ?>
+get_header(); ?>
  
         <h2 class="page-heading"><?php the_archive_title(); ?></h2>
         

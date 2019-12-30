@@ -20,36 +20,39 @@
     <?php wp_head(); ?>
     <title>AB</title>
 </head>
+
     
 <body>
-  <nav class="navbar navbar-expand-md" role="navigation">
 
-      <div class="container">
-        <div id="logo-img">
+  <header>
+
+
+        <nav class="navbar navbar-expand-lg ">
+          <div id="logo-img">
             <a href="<?php echo site_url(''); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>img/logo.png">AB
+                <img src="<?php echo get_template_directory_uri(); ?> "> <?php  the_custom_logo(); ?> AB
             </a>
-        </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-          <?php
-          wp_nav_menu( array(
-              'theme_location'    => 'primary',
-              'depth'             => 2,
-              'container'         => 'div',
-              'container_class'   => 'collapse navbar-collapse',
-              'container_id'      => 'bs-example-navbar-collapse-1',
-              'menu_class'        => 'nav navbar-nav',
-              'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-              'walker'            => new WP_Bootstrap_Navwalker(),
-          ) );
-          ?>
-      </div>
-  </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <?php
+                          wp_nav_menu( array(
+                              'theme_location'    => 'primary',
+                              'depth'             => 2,
+                              'container'         => 'div',
+                              'container_class'   => 'collapse navbar-collapse',
+                              'container_id'      => 'navbarSupportedContent',
+                              'menu_class'        => 'nav navbar-nav',
+                              'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                              'walker'            => new WP_Bootstrap_Navwalker(),
+                          ) );
+                          ?>
+              
+            </div>
+  </header>          
     
 	<div id="content" class="site-content">
 

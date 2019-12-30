@@ -77,8 +77,8 @@ if ( ! function_exists( 'abtheme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 512,
-			'width'       => 512,
+			'height'      => 75,
+			'width'       => 75,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
