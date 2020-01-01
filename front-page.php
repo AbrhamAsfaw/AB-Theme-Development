@@ -5,9 +5,10 @@
     </div>
   
     <main>
-        <a href="<?php echo site_url('/blog'); ?>">
+        
+        <br>
             <h2 class="section-heading">Blogs</h2>
-        </a>
+        
 
         <section>
             
@@ -48,15 +49,20 @@
 
         ?>
     </section>
+
+    <br>
     
-        	<h2 class="section-heading">Projects</h2>
+        	<h2 class="section-heading">Tutorials</h2>
+
+            
 
         <section>
+        
             <?php
 
                 $args = array(
-                    'post_type' => 'project',
-                    'post_per_page' => 2,
+                    'post_type' => 'tutorial',
+                    'post_per_page' => 4,
                 );
 
                 $projects = new wp_query($args);
@@ -90,6 +96,8 @@
         ?>
         </section>
 
+        <br>
+
         <h2 class="section-heading">Materials</h2>
 
         <section id="section-source">
@@ -97,7 +105,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum neque qui delectus ad dolor blanditiis perferendis praesentium
                 consectetur aut sed provident obcaecati aspernatur perspiciatis, dolores nobis pariatur ipsum vel corrupti!
             </p>
-            <a href="#" class="btn-readmore">Project Materials </a>
+            <a href="#" class="btn-readmore">click here </a>
         </section>
 
 <?php get_footer(); ?>

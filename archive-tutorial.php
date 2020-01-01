@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
-            <h2 class="page-heading">Projects</h2>        
+    
+        
+            <h2 class="page-heading">Tutorials</h2>
+        
 
         <section>
             

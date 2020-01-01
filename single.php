@@ -8,30 +8,88 @@
  */
 
 get_header();
-?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+while (have_posts()) {
+  the_post();
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+ ?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+    <h2 class="page-heading"><?php the_title(); ?></h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <div class="card-meta-blogpost">
+            Posted by <?php the_author(); ?> on <?php the_time('F j , Y') ?>
+            <?php if(get_post_type() == 'post') { ?> 
+            in<a href="#"><?php echo get_the_category_list(', ') ?>	</a>
+        	<?php } ?>
+          </div>
+          <div class="card-image">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
+          </div>
+          <div class="card-description">
+            <?php the_content(); ?>
+          </div>
+        </div>
 
-			the_post_navigation();
+        <div id="comments-section">
+          <?php
+          $fields =  array(
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			'author' =>
+			'<input placeholder="Name" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+			'" size="30"' . $aria_req . ' />',
 
-		endwhile; // End of the loop.
-		?>
+			'email' =>
+			'<input placeholder="Email" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+			'" size="30"' . $aria_req . ' />',
+			);
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+          $args = array(
+          	'title_reply' => 'Share Your Thoughts',
+          	'fields' => $fields,
+          	'comment_field' => '<textarea placeholder="Your Comment" id="comment" 
+          	name="comment" cols="45" rows="8" aria-required="true">' . 
+          	'</textarea>',
+          	'comment_notes_before' => '<p class="comment-notes">All fields are required.</p>'
+          );
 
-<?php
-get_sidebar();
-get_footer();
+          comment_form($args);
+
+          $comments_number = get_comments_number();
+          if($comments_number != 0) {
+          	?>
+
+          	<div class="comments">
+          		<h3>What others say</h3>
+          		<ol class="all-comments">
+          			<?php
+          			$comments = get_comments(array(
+          				'post_id' => $post->ID,
+          				'status' => 'approve'
+          			));
+          			wp_list_comments(array(
+          				'per_page' => 10
+          			), $comments);
+          			?>
+          		</ol>
+          	</div>
+
+          	<?php
+          }
+
+           ?>
+        </div>
+      </section>
+      <?php } ?>
+
+    <br>
+
+      <aside id="sidebar">
+        <?php dynamic_sidebar('sidebar-1'); ?>
+      </aside>
+    </div>
+
+    <?php get_footer(); ?>
+
+   

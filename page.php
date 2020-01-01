@@ -13,9 +13,12 @@
  */
 
 get_header();
+
 while (have_posts()) {
   the_post();
-   ?>    
+
+ ?>    
+
     <h2 class="page-heading"><?php the_title(); ?></h2>
     <div id="post-container">
       <section id="blogpost">
@@ -29,11 +32,15 @@ while (have_posts()) {
             <?php the_content(); ?>
           </div>
         </div>
+
       </section>
       <?php } ?>
+
       <br>
+
       <aside id="sidebar">
         <?php dynamic_sidebar('sidebar-1'); ?>
       </aside>
     </div>
+
 <?php get_footer(); ?>    
