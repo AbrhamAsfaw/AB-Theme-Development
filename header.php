@@ -28,11 +28,9 @@
 
 
         <nav class="navbar navbar-expand-lg ">
-          <div id="logo-img">
-            <a href="<?php echo site_url(''); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?> "> <?php  the_custom_logo(); ?> AB
-            </a>
-          </div>
+            <div id="logo-img">
+                  <a href="<?php echo site_url(''); ?>"> <?php  the_custom_logo(); ?> AB </a>
+            </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
