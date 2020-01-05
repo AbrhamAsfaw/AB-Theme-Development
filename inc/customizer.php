@@ -1,8 +1,8 @@
 <?php
 /**
- * ABTheme Theme Customizer
+ * ABwp Theme Customizer
  *
- * @package ABTheme
+ * @package ABwp
  */
 
 /**
@@ -10,30 +10,95 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function abtheme_customize_register( $wp_customize ) {
+function ABwp_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+
+	// Showcase Section
+    $wp_customize->add_section('showcase', array(
+      'title'   => __('Showcase', 'ABwp'),
+      'description' => sprintf(__('Options for showcase','ABwp')),
+      'priority'    => 130
+    ));
+
+    $wp_customize->add_setting('showcase_image', array(
+      'default'   => get_bloginfo('template_directory').'/assets/images/3.jpg',
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_image', array(
+      'label'   => __('Showcase Image', 'ABwp'),
+      'section' => 'showcase',
+      'settings' => 'showcase_image',
+      'priority'  => 1
+    )));
+
+
+    $wp_customize->add_setting('showcase_heading', array(
+      'default'   => _x('Custom Bootstrap Wordpress Theme', 'ABwp'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('showcase_heading', array(
+      'label'   => __('Heading', 'ABwp'),
+      'section' => 'showcase',
+      'priority'  => 2
+    ));
+
+    $wp_customize->add_setting('showcase_text', array(
+      'default'   => _x('Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam', 'ABwp'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('showcase_text', array(
+      'label'   => __('Text', 'ABwp'),
+      'section' => 'showcase',
+      'priority'  => 3
+    ));
+
+    $wp_customize->add_setting('btn_url', array(
+      'default'   => _x('http://test.com', 'ABwp'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('btn_url', array(
+      'label'   => __('Button URL', 'ABwp'),
+      'section' => 'showcase',
+      'priority'  => 4
+    ));
+
+    $wp_customize->add_setting('btn_text', array(
+      'default'   => _x('Read More', 'ABwp'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('btn_text', array(
+      'label'   => __('Button Text', 'ABwp'),
+      'section' => 'showcase',
+      'priority'  => 5
+    ));
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'abtheme_customize_partial_blogname',
+			'render_callback' => 'ABwp_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'abtheme_customize_partial_blogdescription',
+			'render_callback' => 'ABwp_customize_partial_blogdescription',
 		) );
 	}
 }
-add_action( 'customize_register', 'abtheme_customize_register' );
+add_action( 'customize_register', 'ABwp_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function abtheme_customize_partial_blogname() {
+function ABwp_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -42,14 +107,14 @@ function abtheme_customize_partial_blogname() {
  *
  * @return void
  */
-function abtheme_customize_partial_blogdescription() {
+function ABwp_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function abtheme_customize_preview_js() {
-	wp_enqueue_script( 'abtheme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function ABwp_customize_preview_js() {
+	wp_enqueue_script( 'ABwp-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'abtheme_customize_preview_js' );
+add_action( 'customize_preview_init', 'ABwp_customize_preview_js' );

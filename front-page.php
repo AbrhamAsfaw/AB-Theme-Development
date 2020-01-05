@@ -1,8 +1,12 @@
 <?php get_header(); ?>
 
-    <div id="banner">
-        <h1>&lt;AB/&gt;</h1>
-    </div>
+    <section class="showcase">
+      <div class="container">
+        <h1><?php echo get_theme_mod('showcase_heading', 'Custom Bootstrap Wordpress Theme'); ?></h1>
+        <p><?php echo get_theme_mod('showcase_text', 'Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam'); ?></p>
+        <a href="<?php echo get_theme_mod('btn_url', 'http://test.com'); ?>" class="btn btn-primary btn-lg"><?php echo get_theme_mod('btn_text', 'Get Started'); ?></a>
+      </div>
+    </section>
   
     <main>
         
@@ -49,15 +53,10 @@
 
         ?>
     </section>
-
-    <br>
     
         	<h2 class="section-heading">Tutorials</h2>
 
-            
-
         <section>
-        
             <?php
 
                 $args = array(
@@ -95,8 +94,6 @@
 
         ?>
         </section>
-
-        <br>
 
         <h2 class="section-heading">Materials</h2>
 

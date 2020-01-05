@@ -26,7 +26,6 @@ body {
 
 h1 {
   padding: 8px;
-  background: #2e9cca;
   border-radius: 8px;
   margin: 0;
   font-size: 64px;
@@ -151,6 +150,28 @@ nav.active {
 #logo-img img {
   height: 75px;
   width: 75px;
+}
+
+/* showcase */
+
+.showcase {
+  height: 600px;
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: #ccc 1px solid;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.showcase h1 {
+  font-size: 55px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+
+.showcase p {
+  font-size: 20px;
+  margin-bottom: 50px;
 }
 
 /* Search Icon */
