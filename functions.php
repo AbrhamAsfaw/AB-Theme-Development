@@ -221,8 +221,8 @@ function abwp_customize_css() { ?>
     footer {
       background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
     }
-    #mainnav {
-      background-color: <?php echo get_theme_mod('abwp_nav_color'); ?>;
+    nav {
+      background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
     }
     #sidebar {
     	background: <?php echo get_theme_mod('abwp_nav_color'); ?>;

@@ -25,26 +25,26 @@
     
     <style>
       .showcase{
-        background:url(<?php echo get_theme_mod('showcase_image', get_bloginfo('template_url').'/assets/images/3.jpg'); ?>) no-repeat center center; 
+        background:url(<?php echo get_theme_mod('showcase_image', get_bloginfo('template_url').'/img/3.jpg'); ?>) no-repeat center center; 
+        height : 600px;
+      }
     </style>
 
     <?php wp_head(); ?>
 
 </head>
 
-    
 
+    
+<body <?php body_class(); ?>>
 
   
-  <div id="mainnav" >
+  <div>
 
-        <nav class="navbar navbar-expand-md " >
-
-          <div id="logo-img">
-                 
-                <a href="<?php echo site_url(''); ?>"> <?php  the_custom_logo(); ?> <?php bloginfo('name'); ?> </a>
-          </div>
-          
+        <nav class="navbar navbar-expand-md ">
+            <div id="logo-img">
+                  <a href="<?php echo site_url(''); ?>"> <?php  the_custom_logo(); ?> AB </a>
+            </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -64,8 +64,7 @@
                           ?>
               
             </div>
-          </nav>
-
+        </nav>
   </div>          
     
 	<div id="content" class="site-content">

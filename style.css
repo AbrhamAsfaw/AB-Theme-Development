@@ -120,9 +120,8 @@ textarea:focus {
 
 /* Navigation */
 
-#mainnav {
+nav {
   height: 75px;
-  background: #0062ccd9;
   width: 100%;
   margin: 0;
   position: fixed;

@@ -11,51 +11,29 @@
 
 ?>
 
-<footer>
+        <footer>
+            
+            <?php
+                get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 
-            <div class="container">
                 <div class="row">
-                    <div class="col">
-                    <?php
-                    if(is_active_sidebar('footer-1')){
-                    dynamic_sidebar('footer-1');
-                    }
-                    ?>
+                    <div class="col-8">
+                        
                     </div>
-                <div class="col">
-                    <?php
-                    if(is_active_sidebar('footer-2')){
-                    dynamic_sidebar('footer-2');
-                    }
-                    ?>
-                </div>
-                <div class="col">
-                    <?php
-                    if(is_active_sidebar('footer-3')){
-                    dynamic_sidebar('footer-3');
-                    }
-                    ?>
-                </div>
-                <div class="col">
-                    <?php
-                    if(is_active_sidebar('footer-4')){
-                    dynamic_sidebar('footer-4');
-                    }
-                    ?>
-                </div>
-                </div>  
-            </div>
 
-                <nav>
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'footer',
+                <div class="col-4">
+                    <nav>
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer',
+                    
+                        ) );
+                        ?>
+                    </nav>
+  ...
+                </div>
                 
-                    ) );
-                    ?>
-                </nav>
-                     
-
+              </div>      
         </footer>
 
     </main>
