@@ -53,6 +53,8 @@
 
         ?>
     </section>
+
+    <br>
     
         	<h2 class="section-heading">Tutorials</h2>
 
@@ -95,14 +97,5 @@
         ?>
         </section>
 
-        <h2 class="section-heading">Materials</h2>
-
-        <section id="section-source">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum neque qui delectus ad dolor blanditiis perferendis praesentium
-                consectetur aut sed provident obcaecati aspernatur perspiciatis, dolores nobis pariatur ipsum vel corrupti!
-            </p>
-            <a href="#" class="btn-readmore">click here </a>
-        </section>
-
+        <br>
 <?php get_footer(); ?>

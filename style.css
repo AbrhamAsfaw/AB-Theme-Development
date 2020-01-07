@@ -120,7 +120,7 @@ textarea:focus {
 
 /* Navigation */
 
-nav {
+#mainnav {
   height: 75px;
   background: #0062ccd9;
   width: 100%;
@@ -136,7 +136,7 @@ nav {
 }
 
 nav a {
-  padding: 0 32px;
+  padding: 0 16px;
   color: #eee;
   transition: 0.4s;
 }
@@ -249,14 +249,14 @@ section {
   margin-left: 24px;
   font-weight: bold;
   cursor: pointer;
-  background: white;
+  background: #ecf0f1;
 }
 
 .btn-readmore:hover {
   background: #2e9cca;
   text-decoration: none;
   padding: 8px 64px 8px 24px;
-  color: white;
+  color: #25274d;
 }
 
 /* Footer */
@@ -266,6 +266,7 @@ footer {
   padding: 8px;
   color: #eee;
   display: flex;
+  width: 100%;
 }
 
 footer a {
@@ -303,6 +304,20 @@ footer a :hover {
 
 .card-meta a {
   color: #333;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #e9ecef;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
 /* Pagination */

@@ -79,6 +79,46 @@ function ABwp_customize_register( $wp_customize ) {
       'section' => 'showcase',
       'priority'  => 5
     ));
+    
+    $wp_customize->add_setting('abwp_nav_color', array(
+      'default' => '#0062CCD9',
+      'transport'  => 'refresh',
+    ));
+    $wp_customize->add_section('abwp_standard_colors', array(
+      'title' => __('Standard Colors', 'ABwp'),
+      'priority' => 30,
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'abwp_nav_color_control', array(
+
+      'label' => __('Header and Footer Background Color', 'ABwp'),
+      'section' => 'abwp_standard_colors',
+      'settings' => 'abwp_nav_color',
+
+    ) ));
+
+    $wp_customize->add_setting('abwp_link_color', array(
+      'default' => '#25274d',
+      'transport'  => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'abwp_link_color_control', array(
+
+      'label' => __('Link Color', 'ABwp'),
+      'section' => 'abwp_standard_colors',
+      'settings' => 'abwp_link_color',
+
+    ) ));
+
+    $wp_customize->add_setting('abwp_btn_color', array(
+      'default' => '#ecf0f1',
+      'transport'  => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'abwp_btn_color_control', array(
+
+      'label' => __('Button Hover Color', 'ABwp'),
+      'section' => 'abwp_standard_colors',
+      'settings' => 'abwp_btn_color',
+
+    ) ));
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -92,6 +132,8 @@ function ABwp_customize_register( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'ABwp_customize_register' );
+
+
 
 /**
  * Render the site title for the selective refresh partial.
