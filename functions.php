@@ -205,44 +205,42 @@ function abtheme_scripts() {
 	wp_enqueue_style( 'assets', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css' );
 	wp_enqueue_script( 'assets', get_template_directory_uri() . '/assets/js/bootstrap.min.js' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_script( 'abtheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 	
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'abtheme_scripts' );
-
 
 //Output Customize css
 
 function abwp_customize_css() { ?>
 
-  <style type="text/css">
-    footer {
-      background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
-    }
-    nav {
-      background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
-    }
-    #sidebar {
-    	background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
-    }
-    nav a {
-    	color: <?php echo get_theme_mod('abwp_link_color'); ?>;
-    }
-
-    a:link {
-    	color: <?php echo get_theme_mod('abwp_link_color'); ?>;
-    }
-
-    .btn-readmore:hover {
-    	background: <?php echo get_theme_mod('abwp_btn_color'); ?>;
-    }
-  </style>
-
-<?php }
-
-add_action('wp_head', 'abwp_customize_css');
+	<style type="text/css">
+	  footer {
+		background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
+	  }
+	  nav {
+		background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
+	  }
+	  #sidebar {
+		  background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
+	  }
+	  nav a {
+		  color: <?php echo get_theme_mod('abwp_link_color'); ?>;
+	  }
+  
+	  a:link {
+		  color: <?php echo get_theme_mod('abwp_link_color'); ?>;
+	  }
+  
+	  .btn-readmore:hover {
+		  background: <?php echo get_theme_mod('abwp_btn_color'); ?>;
+	  }
+	</style>
+  
+  <?php }
+  
+  add_action('wp_head', 'abwp_customize_css');
 
 // Search Filters
 
@@ -255,13 +253,11 @@ function search_filter($query) {
 add_filter('pre_get_posts', 'search_filter');
 
 function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+	require_once get_template_directory() . '/navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
 
 // Customizer File
 require get_template_directory(). '/inc/customizer.php';
-
-
 

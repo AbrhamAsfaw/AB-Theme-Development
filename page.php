@@ -19,28 +19,32 @@ while (have_posts()) {
 
  ?>    
 
-    <h2 class="page-heading"><?php the_title(); ?></h2>
+<br>
     <div id="post-container">
+    
       <section id="blogpost">
+
         <div class="card">
+          
           <?php if(has_post_thumbnail()) {  ?>
+
           <div class="card-image">
             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
           </div>
+
           <?php } ?>
+
           <div class="card-description">
             <?php the_content(); ?>
           </div>
+
         </div>
 
       </section>
+
       <?php } ?>
 
-      <br>
-
-      <aside id="sidebar">
-        <?php dynamic_sidebar('sidebar-1'); ?>
-      </aside>
     </div>
+    <br>
 
 <?php get_footer(); ?>    

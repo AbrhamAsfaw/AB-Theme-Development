@@ -97,7 +97,7 @@ function ABwp_customize_register( $wp_customize ) {
     ) ));
 
     $wp_customize->add_setting('abwp_link_color', array(
-      'default' => '#25274d',
+      'default' => '#000000',
       'transport'  => 'refresh',
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'abwp_link_color_control', array(
