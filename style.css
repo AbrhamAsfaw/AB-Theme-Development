@@ -319,6 +319,13 @@ footer a :hover {
   border-radius: 0.25rem;
 }
 
+/* Full width */
+
+.fullwidth {
+  width: 100% !important;
+  float: none;
+}
+
 /* Pagination */
 
 .pagination {
@@ -365,7 +372,8 @@ footer a :hover {
 #sidebar {
   background: #0062ccd9;
   flex: 1;
-  padding: 8px 16px;
+  margin: 0px 12px;
+  padding: 8px 12px;
   color: white;
   box-shadow: inset 27px 0 51px -18px rgba(0, 0, 0, 0.75);
 }
@@ -587,9 +595,7 @@ footer a :hover {
   main {
     width: 95%;
   }
-  .card {
-    width: 45%;
-  }
+
   .card .card-image img {
     height: 300px;
     width: 100%;
