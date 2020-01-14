@@ -37,7 +37,7 @@ function ABwp_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting('showcase_heading', array(
-      'default'   => _x('Custom Bootstrap Wordpress Theme', 'ABwp'),
+      'default'   => _x('AB', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -48,7 +48,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('showcase_text', array(
-      'default'   => _x('Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam', 'ABwp'),
+      'default'   => _x('Hello Welcome to our site', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
