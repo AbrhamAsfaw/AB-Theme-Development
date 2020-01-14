@@ -260,8 +260,11 @@ section {
 
 /* Footer */
 
-footer {
+.footer {
   background: #0062ccd9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   padding: 8px;
   color: #eee;
   display: flex;
@@ -541,7 +544,6 @@ footer a :hover {
 
   .card,
   .card .card-image img {
-    height: 300px;
     width: 100%;
   }
 
@@ -596,8 +598,11 @@ footer a :hover {
     width: 95%;
   }
 
+  .card {
+    width: 45%;
+  }
+
   .card .card-image img {
-    height: 300px;
     width: 100%;
   }
 }

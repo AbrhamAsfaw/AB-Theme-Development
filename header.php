@@ -43,7 +43,7 @@
 
         <nav class="navbar navbar-expand-md ">
             <div id="logo-img">
-                  <a href="<?php echo site_url(''); ?>"> <?php  the_custom_logo(); ?> AB </a>
+                  <a href="<?php echo site_url(''); ?>"> <?php  the_custom_logo(); ?> </a>
             </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -11,29 +11,11 @@
 
 ?>
 
-        <footer>
+        <footer class="footer">
             
             <?php
                 get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
-
-                <div class="row">
-                    <div class="col-8">
-                        
-                    </div>
-
-                <div class="col-4">
-                    <nav>
-                        <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer',
-                    
-                        ) );
-                        ?>
-                    </nav>
-  ...
-                </div>
-                
-              </div>      
+     
         </footer>
 
     </main>
