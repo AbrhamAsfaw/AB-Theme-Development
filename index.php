@@ -3,7 +3,7 @@
  * The main template file
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ABTheme
+ * @package ABwp
  */
 
 get_header(); ?>

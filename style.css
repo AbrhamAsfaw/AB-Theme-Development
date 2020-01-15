@@ -260,9 +260,8 @@ section {
 
 /* Footer */
 
-.footer {
+footer {
   background: #0062ccd9;
-  position: fixed;
   left: 0;
   bottom: 0;
   padding: 8px;
@@ -551,28 +550,6 @@ footer a :hover {
     flex-direction: column;
     text-align: center;
   }
-
-  footer #left-footer {
-    flex: 1;
-    border-right: 0;
-    padding-left: 0;
-  }
-
-  footer #right-footer {
-    background: #eee;
-    color: black;
-  }
-
-  footer #right-footer a {
-    color: black;
-  }
-
-  footer #social-media-footer a .fa-facebook,
-  footer #social-media-footer a .fa-youtube,
-  footer #social-media-footer a .fa-github {
-    color: black;
-    transition: 0.4s;
-  }
 }
 
 @media (max-width: 600px) {
@@ -603,6 +580,7 @@ footer a :hover {
   }
 
   .card .card-image img {
+    height: 385px;
     width: 100%;
   }
 }

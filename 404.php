@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package ABTheme
+ * @package ABwp
  */
 
 get_header();
@@ -16,7 +16,7 @@ get_header();
 		<ul>
 			<li><a href="<?php echo site_url(''); ?>">Home Page</a></li>
 			<li><a href="<?php echo site_url('/blog'); ?>">Blog List</a></li>
-			<li><a href="<?php echo site_url('/projets'); ?>">Project List</a></li>
+			<li><a href="<?php echo site_url('/tutorials'); ?>">Tutorial List</a></li>
     	</ul>
 	</div>
 	

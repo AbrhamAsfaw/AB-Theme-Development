@@ -6,12 +6,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ABTheme
+ * @package ABwp
  */
 
 ?>
 
-        <footer class="footer">
+        <footer >
             
             <?php
                 get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>

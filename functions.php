@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package ABTheme
+ * @package ABwp
  */
 
 
@@ -223,7 +223,7 @@ function abwp_customize_css() { ?>
 		background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
 	  }
 	  #sidebar {
-		  background: <?php echo get_theme_mod('abwp_nav_color'); ?>;
+		  background: <?php echo get_theme_mod('abwp_sidebar_color'); ?>;
 	  }
 	  nav a {
 		  color: <?php echo get_theme_mod('abwp_link_color'); ?>;
