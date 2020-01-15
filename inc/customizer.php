@@ -96,6 +96,21 @@ function ABwp_customize_register( $wp_customize ) {
 
     ) ));
 
+
+    $wp_customize->add_setting('abwp_sidebar_color', array(
+      'default' => '#81d742',
+      'transport'  => 'refresh',
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'abwp_side_color_control', array(
+
+      'label' => __('Sidebar Background Color', 'ABwp'),
+      'section' => 'abwp_standard_colors',
+      'settings' => 'abwp_sidebar_color',
+
+    ) ));
+
+
     $wp_customize->add_setting('abwp_link_color', array(
       'default' => '#000000',
       'transport'  => 'refresh',
