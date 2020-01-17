@@ -35,6 +35,8 @@ while (have_posts()) {
 
           <?php } ?>
 
+          <br>
+          
           <div class="card-description">
             <?php the_content(); ?>
           </div>

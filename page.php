@@ -20,6 +20,7 @@ while (have_posts()) {
  ?>    
 
 <br>
+
     <div id="post-container">
     
       <section id="blogpost">
@@ -44,7 +45,12 @@ while (have_posts()) {
 
       <?php } ?>
 
+      <aside id="sidebar">
+        <?php dynamic_sidebar('sidebar-1'); ?>
+      </aside>
+
     </div>
     <br>
+    
 
 <?php get_footer(); ?>    

@@ -61,7 +61,7 @@ get_header(); ?>
     			<ul>
     				<li><a href="<?php echo site_url(''); ?>">Home Page</a></li>
     				<li><a href="<?php echo site_url('/blog'); ?>">Blog List</a></li>
-    				<li><a href="<?php echo site_url('/tutorials'); ?>">Tutorial List</a></li>
+    				<li><a href="<?php echo site_url('/tutorial'); ?>">Tutorial List</a></li>
     			</ul>
     		</div>
     	<?php } ?>
