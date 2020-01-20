@@ -53,9 +53,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
-
 /* Inputs */
 
 input,
@@ -437,6 +434,86 @@ footer a :hover {
 #comments-section {
   border-top: 2px solid #eee;
   padding: 8px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form input,
+.comment-form textarea {
+  margin-bottom: 16px;
+}
+
+.comment-note {
+  text-align: center;
+  color: #000000;
+}
+
+.form-submit .submit,
+.wpcf7 .wpcf7-submit {
+  background: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px;
+  border: 2px solid black;
+  height: 48px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: initial;
+}
+.form-submit .submit:hover,
+.wpcf7 .wpcf7-submit:hover {
+  background: #25274d;
+  color: #2e9cca;
+}
+
+.comment-reply-title {
+  text-align: center;
+}
+
+/* Comments List */
+
+.comments {
+  background-color: #ecf0f1;
+  margin-top: 24px;
+  border-top: 2px solid white;
+}
+
+.all-comments li {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.all-comments .comment-meta {
+  background: #6c7a89;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.all-comments .vcard {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.all-comments .photo {
+  border-right: 8px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.all-comments .says {
+  display: none;
+}
+
+.all-comments .reply {
+  font-weight: bold;
+}
+
+.all-comments .children {
+  margin-top: 16px;
 }
 
 /* No Results Page */
