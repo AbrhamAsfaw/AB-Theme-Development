@@ -24,7 +24,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('showcase_image', array(
-      'default'   => get_bloginfo('template_directory').'/assets/images/3.jpg',
+      'default'   => get_template_directory_uri().'/assets/images/3.jpg',
       'type'      => 'theme_mod'
     ));
 
@@ -37,7 +37,7 @@ function ABwp_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting('showcase_heading', array(
-      'default'   => _x('AB', 'ABwp'),
+      'default'   => _('AB', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -48,7 +48,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('showcase_text', array(
-      'default'   => _x('Hello Welcome to our site', 'ABwp'),
+      'default'   => _('Hello Welcome to our site', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -59,7 +59,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('btn_url', array(
-      'default'   => _x('http://test.com', 'ABwp'),
+      'default'   => _('http://test.com', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -70,7 +70,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('btn_text', array(
-      'default'   => _x('Read More', 'ABwp'),
+      'default'   => _('Read More', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 

@@ -25,7 +25,7 @@
     
     <style>
       .showcase{
-        background:url(<?php echo get_theme_mod('showcase_image', get_bloginfo('template_url').'/img/3.jpg'); ?>) no-repeat center center; 
+        background:url(<?php echo get_theme_mod('showcase_image', get_template_directory_uri().'/assets/images/3.jpg'); ?>) no-repeat center center; 
         height : 600px;
       }
     </style>
