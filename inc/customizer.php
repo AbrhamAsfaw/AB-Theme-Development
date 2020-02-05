@@ -37,7 +37,7 @@ function ABwp_customize_register( $wp_customize ) {
 
 
     $wp_customize->add_setting('showcase_heading', array(
-      'default'   => _('AB', 'ABwp'),
+      'default'   => __('AB', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -48,7 +48,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('showcase_text', array(
-      'default'   => _('Hello Welcome to our site', 'ABwp'),
+      'default'   => __('Hello Welcome to our site', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -59,7 +59,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('btn_url', array(
-      'default'   => _('http://test.com', 'ABwp'),
+      'default'   => __('http://test.com', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
@@ -70,7 +70,7 @@ function ABwp_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('btn_text', array(
-      'default'   => _('Read More', 'ABwp'),
+      'default'   => __('Read More', 'ABwp'),
       'type'      => 'theme_mod'
     ));
 
